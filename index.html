@@ -2,61 +2,63 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Modular Cipher Decryptor</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="bg-dark text-light">
+
   <div class="container py-5">
-    <div class="card bg-secondary bg-opacity-25 border-0 shadow-lg rounded-4">
-      <div class="card-body p-5">
-        <h2 class="text-center mb-4 text-info">🔐 Modular Cipher Decryptor</h2>
+    <div class="card shadow-lg rounded-4 p-4">
+      <h2 class="text-center mb-4 text-info">🔐 Modular Cipher Decryptor</h2>
 
-        <!-- Cipher Dropdown -->
-        <div class="mb-3">
-          <label class="form-label">Pilih Cipher:</label>
-          <div class="dropdown">
-            <button class="btn btn-outline-info dropdown-toggle w-100" type="button" id="dropdownCipher" data-bs-toggle="dropdown" aria-expanded="false">
-              Caesar
-            </button>
-            <ul class="dropdown-menu w-100" id="cipherMenu">
-              <li><a class="dropdown-item active" href="#" data-cipher="Caesar">Caesar</a></li>
-              <li><a class="dropdown-item" href="#" data-cipher="ROT13">ROT13</a></li>
-              <li><a class="dropdown-item" href="#" data-cipher="Atbash">Atbash</a></li>
-              <li><a class="dropdown-item" href="#" data-cipher="Vigenere">Vigenère</a></li>
-            </ul>
-          </div>
+      <!-- Cipher Dropdown -->
+      <div class="mb-3">
+        <label class="form-label">Pilih Cipher:</label>
+        <div class="dropdown">
+          <button id="dropdownCipher" class="btn btn-outline-info w-100 dropdown-toggle" type="button" data-bs-toggle="dropdown">
+            Caesar
+          </button>
+          <ul class="dropdown-menu w-100" id="cipherMenu">
+            <li><a class="dropdown-item active" href="#" data-cipher="Caesar">Caesar</a></li>
+            <li><a class="dropdown-item" href="#" data-cipher="ROT13">ROT13</a></li>
+            <li><a class="dropdown-item" href="#" data-cipher="Atbash">Atbash</a></li>
+            <li><a class="dropdown-item" href="#" data-cipher="Vigenere">Vigenère</a></li>
+          </ul>
         </div>
+      </div>
 
-        <!-- Extra Input -->
-        <div id="extraInputContainer" class="mb-3"></div>
+      <!-- Dynamic Input -->
+      <div id="extraInputContainer" class="mb-3"></div>
 
-        <!-- Encrypted Text -->
-        <div class="mb-3">
-          <label for="encryptedText" class="form-label">Teks Terenkripsi:</label>
-          <textarea id="encryptedText" class="form-control bg-dark text-light" rows="4" placeholder="Masukkan teks terenkripsi..."></textarea>
-        </div>
+      <!-- Text Input -->
+      <div class="mb-3">
+        <label class="form-label">Teks Terenkripsi:</label>
+        <textarea id="encryptedText" class="form-control bg-dark text-light" rows="4" placeholder="Masukkan teks terenkripsi..."></textarea>
+      </div>
 
-        <!-- Decrypt & Brute-force Buttons -->
-        <div class="d-grid gap-2">
-          <button class="btn btn-info fw-bold" onclick="decrypt()">Dekripsi</button>
-          <button class="btn btn-outline-warning fw-bold" id="bruteForceBtn" style="display:none;" onclick="bruteForceCaesar()">🔍 Brute-force Caesar</button>
-        </div>
+      <!-- Action Buttons -->
+      <div class="d-grid gap-2">
+        <button class="btn btn-info fw-bold" id="decryptBtn">Dekripsi</button>
+        <button class="btn btn-outline-warning fw-bold" id="bruteForceBtn" style="display: none;">🔍 Brute-force Caesar</button>
+      </div>
 
-        <!-- Output -->
-        <div class="mt-4">
-          <label for="outputText" class="form-label">Hasil Dekripsi:</label>
+      <!-- Output -->
+      <div class="mt-4">
+        <label class="form-label">Hasil Dekripsi:</label>
+        <div class="position-relative">
           <textarea id="outputText" class="form-control bg-dark text-light" rows="6" readonly></textarea>
-        </div>
-
-        <!-- Save Button -->
-        <div class="d-grid gap-2 mt-3">
-          <button class="btn btn-outline-light" onclick="saveToFile()">💾 Simpan Hasil</button>
+          <button class="btn btn-sm btn-outline-success position-absolute top-0 end-0 m-2" onclick="copyResult(this)">
+            📋 Copy
+          </button>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- Notifikasi -->
+  <div id="notification-container"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="script.js"></script>
