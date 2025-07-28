@@ -1,0 +1,118 @@
+body {
+  background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+  color: #e0e0e0;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  background: rgba(30, 30, 30, 0.6);
+  backdrop-filter: blur(16px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(0, 255, 204, 0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 0 50px rgba(0, 255, 204, 0.3);
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 2rem;
+  color: #00ffc8;
+  letter-spacing: 1px;
+}
+
+label {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+textarea,
+input,
+.dropdown-toggle {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 10px !important;
+  font-size: 0.95rem;
+}
+
+textarea::placeholder,
+input::placeholder {
+  color: #aaa;
+}
+
+.btn {
+  border-radius: 12px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.btn-info {
+  background: linear-gradient(45deg, #00ffc8, #008cff);
+  border: none;
+  color: #000;
+  box-shadow: 0 0 10px rgba(0, 255, 204, 0.6);
+}
+
+.btn-info:hover {
+  background: linear-gradient(45deg, #00cc9a, #0066ff);
+  box-shadow: 0 0 20px rgba(0, 255, 204, 0.9);
+  color: #000;
+}
+
+.btn-outline-light {
+  border-color: #00ffc8;
+  color: #00ffc8;
+}
+
+.btn-outline-light:hover {
+  background-color: #00ffc8;
+  color: #000;
+  box-shadow: 0 0 10px #00ffc8;
+}
+
+.btn-outline-warning {
+  border-color: #ffc107;
+  color: #ffc107;
+}
+
+.btn-outline-warning:hover {
+  background-color: #ffc107;
+  color: #000;
+  box-shadow: 0 0 10px #ffc107;
+}
+
+.dropdown-menu {
+  background-color: #222;
+  border-radius: 10px;
+  border: 1px solid #444;
+}
+
+.dropdown-item {
+  color: #ccc;
+}
+
+.dropdown-item:hover,
+.dropdown-item.active {
+  background-color: #00ffc8;
+  color: #000;
+}
+
+.form-label {
+  margin-bottom: 6px;
+}
+
+textarea:focus,
+input:focus,
+.dropdown-toggle:focus {
+  box-shadow: 0 0 8px #00ffc8;
+  border-color: #00ffc8 !important;
+  outline: none;
+}
